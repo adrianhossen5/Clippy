@@ -17,10 +17,6 @@ const options: { [key: string]: string | boolean }[] = [
     value: 'Minecraft',
   },
   {
-    label: 'Azure',
-    value: 'Azure',
-  },
-  {
     label: 'Bing',
     value: 'Bing',
   },
@@ -99,7 +95,7 @@ const Roles = {
       new SelectMenuBuilder()
         .setCustomId('roles')
         .setPlaceholder('Select your roles.')
-        .setMaxValues(2)
+        .setMaxValues(3)
         .addOptions(roleOptions as any)
     );
 
