@@ -8,7 +8,7 @@
     "dev:register": "npx ts-node deployCommands.ts",
     "dev:start": "npx ts-node deployCommands.ts && npx ts-node index.ts > log.txt 2>&1 &",
     "register": "cd build && P=1 node deployCommands.js",
-    "start": "cd build && P=1 node index.js"
+    "start": "npx ts-node deployCommands.ts && npm run dev"
   },
   "dependencies": {
     "@discordjs/rest": "^1.3.0",
@@ -17,6 +17,7 @@
     "dotenv": "^16.0.3"
   },
   "devDependencies": {
+    "nodemon": "^2.0.20",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.3"
   }
