@@ -17,11 +17,7 @@ const Replies = {
         await message.reply('milk');
     }
 
-    if (
-      message.client.user &&
-      message.mentions.has(message.client.user.id) &&
-      !lowered.startsWith('https://tenor.com')
-    )
+    if (message.client.user && message.mentions.has(message.client.user.id))
       await message.reply(
         'https://tenor.com/view/clippy-microsoft-office-word-publisher-gif-5630386'
       );
