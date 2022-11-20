@@ -6,14 +6,14 @@ const Replies = {
     if (message.author.bot) return;
 
     const lowered = message.content.toLowerCase();
-    const chance = Math.floor(Math.random() * 2) == 0;
+    const chance = (Math.floor(Math.random() * 2) == 0);
 
     if (chance) {
-      if (lowered.split(' ')[0] == 'bill')
+      if (lowered.split(' ')[0] === 'bill')
         await message.reply(
           'https://tenor.com/view/bill-gates-dab-gif-25596097'
         );
-      else if (lowered.split(' ')[0] == 'almond' || lowered === 'almond')
+      else if (lowered.split(' ')[0] === 'almond' || lowered === 'almond')
         await message.reply('milk');
     }
 
