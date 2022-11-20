@@ -19,7 +19,7 @@ const Replies = {
 
     if (message.client.user && message.mentions.has(message.client.user.id))
       await message.reply(
-        'https://tenor.com/view/clippy-microsoft-office-word-publisher-gif-5630386'
+        'https://tenor.com/view/clippy-microsoft-word-office-publisher-gif-5630385'
       );
   },
 };
