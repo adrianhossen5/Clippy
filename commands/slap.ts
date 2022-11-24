@@ -18,7 +18,6 @@ const slap = {
 		const author = interaction.user.toString();
 
 		if (!target) return;
-		if (target.toString() == author)await interaction.reply("Can't slap yourself weirdo.. 🤔");
 
 		let gifs: string[] = ['https://media.tenor.com/-RSry4HDatUAAAAC/slap-out-kast.gif',
 							  'https://media.tenor.com/xdF1G7Hrxa0AAAAC/slap-christmas.gif',
