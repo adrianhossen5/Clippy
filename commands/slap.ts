@@ -1,7 +1,6 @@
 import {
 	CommandInteraction,
 	GuildMember,
-	Message
 } from 'discord.js';
 
 import { SlashCommandBuilder } from '@discordjs/builders';
@@ -14,12 +13,12 @@ const slap = {
 		.addUserOption((option) =>
 		option.setName('user').setDescription('User to slap.').setRequired(true)
 	  ),
-	async execute(interaction: CommandInteraction, message : Message) {
+	async execute(interaction: CommandInteraction) {
 		const target = interaction.options.getMember('user') as GuildMember;
 		const author = interaction.user.toString();
 
 		if (!target) return;
-		/*if (target.toString() == author)await message.reply('🤔');*/
+		if (target.toString() == author)await interaction.reply("Can't slap yourself weirdo.. 🤔");
 
 		let gifs: string[] = ['https://media.tenor.com/-RSry4HDatUAAAAC/slap-out-kast.gif',
 							  'https://media.tenor.com/xdF1G7Hrxa0AAAAC/slap-christmas.gif',
