@@ -1,10 +1,10 @@
 import {
 	CommandInteraction,
 	GuildMember,
+	EmbedBuilder
 } from 'discord.js';
 
 import { SlashCommandBuilder } from '@discordjs/builders';
-const { EmbedBuilder } = require('discord.js');
 
 const slap = {
 	builder: new SlashCommandBuilder()
