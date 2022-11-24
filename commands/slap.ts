@@ -11,32 +11,30 @@ const slap = {
 		.setName('slap')
 		.setDescription('slap')
 		.addUserOption((option) =>
-		option.setName('user').setDescription('User to verify.').setRequired(true)
+		option.setName('user').setDescription('User to slap.').setRequired(true)
 	  ),
 	async execute(interaction: CommandInteraction) {
 		const target = interaction.options.getMember('user') as GuildMember;
+		const author = interaction.user.toString();
+
 		if (!target) return;
+
+		let gifs: string[] = ['https://media.tenor.com/-RSry4HDatUAAAAC/slap-out-kast.gif',
+							  'https://media.tenor.com/xdF1G7Hrxa0AAAAC/slap-christmas.gif',
+							  'https://media.tenor.com/f_mJk_kTQU4AAAAC/anime-girls.gif',
+							  'https://media.tenor.com/NKuG255mKOcAAAAC/nami-zoro.gif',
+							  'https://media.tenor.com/4tPx-valsqAAAAAC/nanbaka-ruka.gif'];
+
+		const randomChoice = Math.floor(Math.random() * gifs.length);
+
+		const embedOutput = new EmbedBuilder()
+		.setColor('#ED4245')
+		.setTitle('Slap Command')
+		.setDescription(`${author} **has slapped** ${target.user}!`)
+		/*.setThumbnail('clippy')*/
+		.setImage(gifs[randomChoice]);
 		
-		const exampleEmbed = new EmbedBuilder()
-		.setColor(0x0099FF)
-		.setTitle('Some title')
-		.setURL('https://discord.js.org/')
-		.setAuthor({ name: 'Some name', iconURL: 'https://i.imgur.com/AfFp7pu.png', url: 'https://discord.js.org' })
-		.setDescription('Some description here')
-		.setThumbnail('https://i.imgur.com/AfFp7pu.png')
-		.addFields(
-			{ name: 'Regular field title', value: 'Some value here' },
-			{ name: '\u200B', value: '\u200B' },
-			{ name: 'Inline field title', value: 'Some value here', inline: true },
-			{ name: 'Inline field title', value: 'Some value here', inline: true },
-		)
-		.addFields({ name: 'Inline field title', value: 'Some value here', inline: true })
-		.setImage('https://i.imgur.com/AfFp7pu.png')
-		.setTimestamp()
-		.setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
-
-
-		interaction.reply({ embeds: [exampleEmbed] });
+		await interaction.reply({ embeds: [embedOutput] });
 
 	},
 };
